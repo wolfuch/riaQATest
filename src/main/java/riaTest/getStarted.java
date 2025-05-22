@@ -16,8 +16,8 @@ public class getStarted {
             //Navigate and verify the buttons
             page.navigate("https://secure.riamoneytransfer.com/");
             page.waitForLoadState();
-            //page.pause();
-            //accept the coockies
+
+            //accept the cookies
             page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Allow all cookies")).click();
 
             assertThat(page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Phone or email$")))).isEnabled();

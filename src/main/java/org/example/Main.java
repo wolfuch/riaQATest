@@ -4,17 +4,15 @@ import com.microsoft.playwright.options.AriaRole;
 import java.util.regex.Pattern;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
         try (Playwright playwright = Playwright.create()) {
-            int i = 0;
 
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
-                    .setHeadless(false));
+            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
             BrowserContext context = browser.newContext();
             Page page = context.newPage();
+
             //Navigate and verify the buttons
             page.navigate("https://www.riamoneytransfer.com/en-cl/");
             page.waitForLoadState();
